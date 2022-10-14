@@ -1,7 +1,17 @@
 # sushi:  A happy way of SSHing to your remote machine
 ![sushi](img/sushi.png)<br>
 
-A ssh menu for ~/.ssh/config
+A ssh menu for ~/.ssh/config. This is a free to use application and does not comes with any warranty. 
+
+# Prerequisite
+The `~/.ssh/config` file must be define according to SSH syntax.
+
+Eg:
+```
+Host myshotname
+  HostName hostname.example.com
+  User myusername
+```
 
 # How To Install
 - Download
