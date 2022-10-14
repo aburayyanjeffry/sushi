@@ -16,7 +16,11 @@ A ssh menu for ~/.ssh/config
 `sudo mv sushi /usr/local/bin`
  
 # How to Use
-Just call for the `sushi`. It will arrange the hosts in sequence with numbers. Enter the number next to the host's name to SSH to the hosts.
+Just call for the `sushi`. It will arrange the hosts in sequence with numbers. Enter the number next to the host's name to SSH to the hosts or enter `q` to exit.
+
 ```
 sushi
 ```
+
+Sample screenshot:
+![screenshot](img/screenshot.png)<br>
