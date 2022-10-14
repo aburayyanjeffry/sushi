@@ -1,0 +1,43 @@
+#!/bin/bash
+# Author: Jeffry Johar
+# Date: 14th October 2022
+# About: A ssh menu for ~/.ssh/config
+# Name : sushi
+
+#### global variable ####
+CONFIG='~/.ssh/config'
+
+#get server list from home directory
+if [[ -f ~/.ssh/config ]];
+then
+  # An array with hosts
+  HOSTS=( $(echo "empty " && grep -e ^Host ~/.ssh/config | cut -d " " -f 2) )
+else
+  echo "$CONFIG does not exist. Please create one"
+  exit
+fi
+
+# Print all hosts in the HOSTS array
+for INDEX in ${!HOSTS[@]}; do
+  if [ "$INDEX" -ne 0 ];
+  then
+    echo "$INDEX ${HOSTS[$INDEX]}"
+  fi
+done
+
+echo
+#get input from user
+read -p "Enter the number or q to quit  : " NUM
+
+if [ "$NUM" = 'q' ];
+then
+  echo "Sayonara ( Bye Bye ) "
+  exit
+#check if NUM greater than 0 and less than length of HOST array
+elif [[ "$NUM" -gt 0 && "$NUM" -lt "${#HOSTS[@]}" ]];
+then
+  echo "sushing to ${HOSTS[$NUM]} ..."
+  ssh ${HOSTS[$NUM]}
+else
+  echo "$NUM is an invalid selection"
+fi
