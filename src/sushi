@@ -5,10 +5,18 @@
 # Name : sushi
 
 #### global variable ####
-CONFIG='~/.ssh/config'
+CONFIG="$HOME/.ssh/config"
+
+# if the argument is 'conf' then open the CONFIG
+if [[ "$1" == "conf" ]];
+then
+ vi $CONFIG
+ exit
+fi
+
 
 #get server list from home directory
-if [[ -f ~/.ssh/config ]];
+if [[ -f "$CONFIG" ]];
 then
   # An array with hosts
   HOSTS=( $(echo "empty " && grep -e ^Host ~/.ssh/config | cut -d " " -f 2) )
