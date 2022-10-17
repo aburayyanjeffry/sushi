@@ -32,5 +32,10 @@ Just call for the `sushi`. It will arrange the hosts in sequence with numbers. E
 sushi
 ```
 
+To vim '~/.ssh/config" just do
+```
+sushi conf
+``` 
+
 Sample screenshot:
 ![screenshot](img/screenshot.png)<br>
